@@ -8,6 +8,12 @@ while ( result.hasNext() ) {
    printjson( result.next() );
 }
 
+//OUTPUT:
+/*
+task10	August 11, 2018
+task9	Novemer 9, 2018
+*/
+
  //retrieve project names which hs a particular section: QA
 
 result=db.projects.find({sectionName:"QA"},{project});
@@ -18,7 +24,15 @@ while ( result.hasNext() ) {
    printjson( result.next() );
 } 
 
- // retrieve list of tasks of projects with under workspace 1
+// OUTPUT:
+/*
+P1
+P2
+P3
+P4
+*/
+
+ // retrieve list of tasks of projects under workspace 1
 
  result=db.projects.find({workspaceID:1},{user.tasks.task_name});
  print('Result for "retrieve list of tasks of projects with under workspace 1"');
@@ -27,3 +41,11 @@ while ( result.hasNext() ) {
 while ( result.hasNext() ) {
    printjson( result.next() );
 }
+
+//OUTPUT:
+/*
+task7
+task8
+task3
+task1
+*/
