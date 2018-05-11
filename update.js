@@ -19,7 +19,7 @@ printjson(result.next());
 
 //Removing the first user from the sorted user list
 db.projects.update({"project": "P1"}, {$pop: {"user": {key: -1}}});
-esult = db.projects.find({"project": "P1"});
+result = db.projects.find({"project": "P1"});
 print('Result after Updating the task fields once it is completed');
 while(result.hasNext()){
 printjson(result.next());
