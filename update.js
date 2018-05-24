@@ -2,7 +2,7 @@
 //Updating the task fields once it is completed - Removing Due on and adding completed status
 db.projects.update({projectID:124,"user.tasks.task_id": 23},
                 {$set: {"user.tasks.$.completed_on": new Date("January 6, 2018 13:06")}},{upsert: true});
-db.projects.update({projectID:124,"user.tasks.task_id": 23}, { $unset: {"user.tasks.$[].due_on": ""}});
+db.projects.update({projectID:124,"user.tasks.task_id": 23}, { $unset: {"user.tasks.$.due_on": ""}});
 result = db.projects.find({projectID:124});
 print('Result after Updating the task fields once it is completed');
 while(result.hasNext()){
